@@ -3,153 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEconomics Recruitment - For Job Seekers</title>
+    <title>Job Seekers | WEconomics Recruitment</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header class="header">
-        <div class="logo">
-            <img src="logo.png" alt="WEconomics Logo" class="header-logo">
-        </div>
+        <div class="logo"><img src="logo.png" alt="WEconomics" class="header-logo"></div>
         <nav class="nav">
             <a href="index.html">Home</a>
             <a href="employers.html">For Employers</a>
-            <a href="#" class="active">For Job Seekers</a>
+            <a href="jobseekers.html" class="active">For Job Seekers</a>
             <a href="process.html">Our Process</a>
             <a href="contact.html">Contact Us</a>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>Explore New<br>Career Opportunities</h1>
-                <p>Register with WEconomics at no cost. Let us connect you with roles that match your skills, experience, and ambitions.</p>
-                <div class="hero-ctas">
-                    <a href="#form-area" class="btn-primary"><i class="fas fa-arrow-down"></i> Register Now</a>
-                </div>
-            </div>
-            
-            <div class="hero-shapes">
-                <div class="shape shape-seeker-circle"></div>
-                <div class="shape shape-seeker-path"></div>
-                <div class="shape shape-seeker-gold"></div>
-            </div>
-        </div>
-    </section>
+    <section class="form-section">
+        <div class="form-box">
+            <h2>Candidate Registration</h2>
+            <p>Join our niche network. Complete the details below and we will contact you when a purpose-fit role becomes available.</p>
 
-    <section class="form-section" id="form-area">
-        <div class="form-container">
-            <h2>Take the Next Step</h2>
-            <p>Our specialists match you with top opportunities in your field.</p>
-
-            <form action="https://formspree.io/f/mbdlrbae" method="POST">
+            <form>
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="name">Name *</label>
-                        <input type="text" id="name" name="name" required>
+                        <label>FIRST NAME *</label>
+                        <input type="text" required>
                     </div>
                     <div class="form-group">
-                        <label for="surname">Surname *</label>
-                        <input type="text" id="surname" name="surname" required>
+                        <label>SURNAME *</label>
+                        <input type="text" required>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="phone">Phone *</label>
-                        <input type="tel" id="phone" name="phone" required>
+                        <label>EMAIL ADDRESS *</label>
+                        <input type="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required>
+                        <label>PHONE NUMBER *</label>
+                        <input type="tel" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>CURRENT ROLE / TITLE *</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>DESIRED LOCATION *</label>
+                        <input type="text" placeholder="City / Region">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="highest-qualification">Highest Qualification *</label>
-                    <select id="highest-qualification" name="highest_qualification" required>
-                        <option value="" selected disabled>Please select</option>
-                        <option value="Grade 12/Matric">Grade 12/Matric</option>
-                        <option value="Degree">Degree</option>
-                        <option value="Post-graduate Degree">Post-graduate Degree</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="ideal-role">Ideal Role *</label>
-                        <input type="text" id="ideal-role" name="ideal_role" required placeholder="e.g. Accountant">
-                    </div>
-                    <div class="form-group">
-                        <label for="salary-expectation">Salary Expectation (Monthly ZAR) *</label>
-                        <input type="number" id="salary-expectation" name="salary_expectation" required placeholder="R">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="preferred-location">Preferred Location *</label>
-                        <input type="text" id="preferred-location" name="preferred_location" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="notice-period">Notice Period *</label>
-                        <select id="notice-period" name="notice_period" required>
-                            <option value="" selected disabled>Please select</option>
-                            <option value="Available Immediately">Available Immediately</option>
-                            <option value="30 Days">30 Days</option>
-                            <option value="60 Days">60 Days</option>
-                            <option value="90+ Days">90+ Days</option>
-                        </select>
-                    </div>
+                    <label>UPLOAD CV (PDF preferred) *</label>
+                    <input type="file" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="current-job-title">Current/Last Job Title *</label>
-                    <input type="text" id="current-job-title" name="current_last_job_title" required>
+                    <label>KEY SKILLS & SPECIALIZATIONS</label>
+                    <textarea rows="4" placeholder="e.g. Project Management, Python, Financial Auditing..."></textarea>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="role-start-date">When did you start this role? *</label>
-                        <input type="date" id="role-start-date" name="role_start_date" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="current-salary">Current Salary (Monthly ZAR) *</label>
-                        <input type="number" id="current-salary" name="current_salary" required placeholder="R">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="duties">Duties/Responsibilities *</label>
-                    <textarea id="duties" name="duties_responsibilities" required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="message-recruiter">Message to Recruiter</label>
-                    <textarea id="message-recruiter" name="message"></textarea>
-                </div>
-
-                <div class="form-group checkbox-group">
-                    <label>
-                        <input type="checkbox" name="consent" required>
-                        I consent to the processing of my personal information for recruitment purposes.
-                    </label>
-                </div>
-
-                <input type="hidden" name="_subject" value="New Job Seeker Registration – WEconomics">
-                <input type="hidden" name="_redirect" value="https://weconomics.co.za/thank-you.html">
-
-                <button type="submit" class="btn-secondary form-submit-btn">Register Now</button>
+                <button type="submit" class="form-submit-btn">Register My Interest</button>
             </form>
         </div>
     </section>
 
     <footer class="footer">
-        <p>&copy; 2026 WEconomics Recruitment | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms</a></p>
+        <p>&copy; 2026 WEconomics Recruitment | <a href="#">Privacy Policy</a></p>
     </footer>
 
 </body>
