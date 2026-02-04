@@ -6,7 +6,9 @@
     --color-secondary: #054a59;    /* Dark Navy */
     --color-highlight: #d9ac5f;    /* Gold */
     --color-accent-cream: #e5d9c5; /* Beige */
-    --color-light-bg: #f8fbfa;
+    --color-light-bg: #fdfdfd;     /* Very Light Gray/White */
+    --color-form-label: #054a59;
+    --color-border: #d1d5db;       /* Subtle Gray Border */
     --padding-sides: 8%;
 }
 
@@ -50,7 +52,7 @@ body {
 ============================================================ */
 .hero {
     background-color: var(--color-primary);
-    min-height: 500px;
+    min-height: 550px;
     display: flex;
     align-items: center;
     position: relative;
@@ -69,26 +71,19 @@ body {
     color: #fff;
     z-index: 10;
 }
-.hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); line-height: 1.1; margin-bottom: 20px; }
-.hero p { font-size: 1.1rem; color: var(--color-accent-cream); margin-bottom: 30px; max-width: 550px; }
+.hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.1; margin-bottom: 20px; font-weight: 700; }
+.hero p { font-size: 1.15rem; color: #fff; margin-bottom: 30px; max-width: 550px; opacity: 0.9; }
 
-/* The Shape Wrapper */
-.hero-shapes { flex: 1; position: relative; height: 500px; }
+.hero-shapes { flex: 1; position: relative; height: 550px; }
 .shape { position: absolute; pointer-events: none; }
 
-/* Home Page Shapes */
+/* Shape Definitions for all pages */
 .shape-large-circle { width: 500px; height: 500px; background: #246d71; border-radius: 50%; right: -50px; top: -50px; }
 .shape-semi-gold { width: 300px; height: 150px; background: var(--color-highlight); border-radius: 150px 150px 0 0; bottom: 10%; right: 10%; transform: rotate(-15deg); }
-
-/* Employer Page Shapes */
 .shape-employer-rect { width: 300px; height: 300px; background: var(--color-highlight); border-radius: 0 150px 0 0; top: 10%; right: 5%; }
 .shape-employer-circle { width: 400px; height: 400px; background: #246d71; border-radius: 50%; bottom: -50px; right: -20px; }
-
-/* Jobseeker Page Shapes */
 .shape-seeker-path { width: 80px; height: 100%; background: var(--color-secondary); right: 30%; }
 .shape-seeker-curve { width: 400px; height: 400px; border: 40px solid var(--color-highlight); border-radius: 50%; right: -100px; top: -50px; }
-
-/* Process Page Shapes */
 .shape-process-dot { width: 100px; height: 100px; background: var(--color-highlight); border-radius: 50%; bottom: 20%; right: 40%; }
 .shape-process-wave { width: 500px; height: 500px; background: #246d71; border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; right: -50px; }
 
@@ -102,76 +97,128 @@ body {
     font-weight: 700;
     display: inline-block;
     transition: 0.3s;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    border: none;
-    cursor: pointer;
+    letter-spacing: 0.5px;
 }
-.btn-primary { background: var(--color-highlight); color: var(--color-secondary); margin-right: 15px; }
-.btn-secondary { border: 2px solid #fff; color: #fff; background: transparent; }
-.btn-primary:hover { transform: translateY(-3px); filter: brightness(1.1); }
-.btn-secondary:hover { background: rgba(255,255,255,0.1); transform: translateY(-3px); }
+.btn-primary { background: var(--color-highlight); color: #000; border: none; }
+.btn-secondary { border: 1px solid #fff; color: #fff; background: transparent; }
+.btn-primary:hover { filter: brightness(1.1); }
+.btn-secondary:hover { background: #fff; color: var(--color-primary); }
 
 /* ============================================================
-   5. UNIFIED FORM STYLING (The Fix)
+   5. REFINED FORM STYLING (Matching Employer Brief Image)
 ============================================================ */
-.form-section { background: var(--color-light-bg); padding: 80px 5%; }
-.form-container {
-    max-width: 850px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 50px;
-    border-radius: 8px;
-    border-top: 6px solid var(--color-highlight);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+.form-section { 
+    background: #fff; 
+    padding: 80px 5%; 
+    display: flex;
+    justify-content: center;
 }
-.form-container h2 { color: var(--color-secondary); font-size: 2.2rem; margin-bottom: 10px; text-align: left; }
-.form-container p { color: #666; margin-bottom: 40px; text-align: left; }
 
-.form-group { margin-bottom: 25px; display: flex; flex-direction: column; text-align: left; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+.form-container {
+    width: 100%;
+    max-width: 900px;
+    background: #fff;
+}
+
+.form-container h2 { 
+    color: var(--color-form-label); 
+    font-size: 2.2rem; 
+    margin-bottom: 15px; 
+    font-weight: 700;
+}
+
+.form-container p { 
+    color: #666; 
+    margin-bottom: 45px; 
+    font-size: 1rem;
+}
+
+.form-row { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 30px; 
+    margin-bottom: 25px;
+}
+
+.form-group { 
+    margin-bottom: 25px; 
+}
 
 .form-group label {
     font-weight: 700;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    color: var(--color-secondary);
-    margin-bottom: 8px;
-    letter-spacing: 0.5px;
+    color: var(--color-form-label);
+    margin-bottom: 10px;
     display: block;
+    letter-spacing: 0.3px;
 }
 
 .form-group input, 
 .form-group select, 
 .form-group textarea {
     width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
+    padding: 14px 16px;
+    border: 1px solid var(--color-border);
     border-radius: 4px;
     font-size: 1rem;
-    font-family: inherit;
+    color: #444;
     background: #fff;
+    transition: all 0.2s ease;
 }
-.form-group input:focus { border-color: var(--color-primary); outline: none; }
 
-.checkbox-group { flex-direction: row; align-items: flex-start; gap: 12px; }
-.checkbox-group input { width: auto; margin-top: 5px; }
-.checkbox-group label { text-transform: none; font-weight: 400; font-size: 0.9rem; }
+.form-group input::placeholder, 
+.form-group textarea::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus { 
+    border-color: var(--color-primary); 
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(29, 91, 94, 0.1);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.checkbox-group input {
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+}
+
+.checkbox-group label {
+    text-transform: none;
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: #444;
+}
 
 .form-submit-btn {
     background: var(--color-primary);
     color: #fff;
-    width: 100%;
-    padding: 18px;
+    padding: 16px 40px;
     border: none;
     border-radius: 4px;
-    font-weight: bold;
-    font-size: 1.1rem;
+    font-weight: 700;
+    font-size: 1rem;
     cursor: pointer;
     transition: 0.3s;
+    text-transform: uppercase;
 }
-.form-submit-btn:hover { background: var(--color-secondary); }
+
+.form-submit-btn:hover {
+    background: var(--color-secondary);
+}
 
 /* ============================================================
    6. RESPONSIVE
@@ -180,9 +227,7 @@ body {
     .hero-container { flex-direction: column; text-align: center; }
     .hero-shapes { width: 100%; height: 250px; order: -1; }
     .form-row { grid-template-columns: 1fr; gap: 0; }
-    .form-container { padding: 30px 20px; }
 }
 
-/* Footer Styling */
-.footer { padding: 60px; background: var(--color-secondary); color: #fff; text-align: center; }
+.footer { padding: 40px; background: var(--color-secondary); color: #fff; text-align: center; font-size: 0.9rem; }
 .footer a { color: var(--color-highlight); text-decoration: none; margin: 0 10px; }
