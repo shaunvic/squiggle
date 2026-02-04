@@ -1,82 +1,256 @@
-/* ============================
-   VARIABLES
-============================ */
+/* ============================================================
+   1. MASTER BRAND CONFIGURATION
+============================================================ */
 :root {
-    --color-primary: #1d5b5e;      /* Brand Teal */
-    --color-secondary: #054a59;    /* Dark Navy */
-    --color-highlight: #d9ac5f;    /* Brand Gold */
-    --color-accent-cream: #e5d9c5; /* Muted Beige */
-    --color-light-bg: #f8fbfa;
+    --color-primary: #1d5b5e;      /* Deep Teal */
+    --color-secondary: #054a59;    /* Dark Navy/Teal */
+    --color-highlight: #d9ac5f;    /* Muted Gold */
+    --color-accent-cream: #e5d9c5; /* Beige */
+    --color-light-bg: #f8fbfa;     /* Soft Off-White */
+    --color-text-dark: #333333;
+    --color-text-light: #ffffff;
     --padding-sides: 6%;
+    --shadow-soft: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* ============================
-   BASE & HEADER
-============================ */
-body { font-family: 'Inter', Arial, sans-serif; margin: 0; color: #333; }
-.header { display: flex; justify-content: space-between; align-items: center; padding: 15px var(--padding-sides); background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
-.header-logo { height: 40px; }
-.nav a { margin-left: 20px; text-decoration: none; color: #333; font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
+/* ============================================================
+   2. GLOBAL RESET & BASE STYLES
+============================================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 { line-height: 1.2; color: var(--color-secondary); }
+
+/* ============================================================
+   3. NAVIGATION & HEADER
+============================================================ */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem var(--padding-sides);
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-logo { height: 42px; width: auto; }
+
+.nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--color-text-dark);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
 .nav a.active, .nav a:hover { color: var(--color-primary); }
 
-/* ============================
-   HERO & GEOMETRICS
-============================ */
-.hero { background: var(--color-primary); min-height: 550px; display: flex; align-items: center; overflow: hidden; position: relative; }
-.hero-container { display: flex; width: 100%; align-items: center; }
-.hero-content { flex: 1; padding: 60px var(--padding-sides); color: #fff; z-index: 10; }
-.hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
-.hero p { font-size: 1.2rem; color: var(--color-accent-cream); max-width: 500px; margin-bottom: 30px; }
+/* ============================================================
+   4. HERO SYSTEM & GEOMETRIC ENGINE
+============================================================ */
+.hero {
+    background-color: var(--color-primary);
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
 
-/* Shapes */
-.hero-shapes { flex: 1; position: relative; height: 550px; background: rgba(255,255,255,0.02); }
+.hero-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    flex: 1.2;
+    padding: 60px var(--padding-sides);
+    color: var(--color-text-light);
+    z-index: 10;
+}
+
+.hero h1 { font-size: clamp(2.5rem, 5vw, 3.8rem); color: #fff; margin-bottom: 20px; }
+.hero p { font-size: 1.2rem; color: var(--color-accent-cream); margin-bottom: 35px; max-width: 550px; }
+
+/* The Shape Wrapper */
+.hero-shapes {
+    flex: 1;
+    position: relative;
+    height: 550px;
+}
+
 .shape { position: absolute; }
-.shape-employer-main { width: 500px; height: 500px; background: #246d71; border-radius: 50%; right: -50px; bottom: -50px; z-index: 1; }
+
+/* 4a. Index Shapes */
+.shape-large-circle { width: 600px; height: 600px; background: #246d71; border-radius: 50%; right: -100px; top: -50px; }
+.shape-semi-gold { width: 350px; height: 175px; background: var(--color-highlight); border-radius: 175px 175px 0 0; bottom: 10%; right: 15%; transform: rotate(-15deg); }
+.shape-quarter-cream { width: 280px; height: 280px; background: var(--color-accent-cream); border-radius: 100% 0 0 0; top: 0; right: 0; opacity: 0.8; }
+
+/* 4b. Employer Shapes */
+.shape-employer-main { width: 500px; height: 500px; background: #246d71; border-radius: 50%; right: -50px; bottom: -50px; }
 .shape-employer-gold { width: 250px; height: 250px; background: var(--color-highlight); border-radius: 0 120px 0 0; top: 10%; right: 15%; z-index: 2; }
-.shape-employer-accent { width: 60px; height: 100%; background: var(--color-secondary); right: 30%; z-index: 0; }
+.shape-employer-accent { width: 60px; height: 100%; background: var(--color-secondary); right: 30%; }
 
-/* ============================
-   BUTTONS
-============================ */
-.btn-primary { background: var(--color-highlight); color: var(--color-secondary); padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 4px; display: inline-block; transition: 0.3s; border: none; }
-.btn-primary:hover { filter: brightness(1.1); transform: translateY(-2px); }
+/* 4c. Jobseeker Shapes */
+.shape-seeker-circle { width: 500px; height: 500px; background: #246d71; border-radius: 50%; right: -100px; top: -100px; }
+.shape-seeker-gold { width: 300px; height: 300px; background: var(--color-highlight); border-radius: 150px 0 150px 150px; bottom: 10%; right: 5%; opacity: 0.85; }
+.shape-seeker-path { width: 80px; height: 100%; background: var(--color-secondary); right: 25%; top: 0; }
 
-/* ============================
-   FORM SECTION
-============================ */
+/* 4d. Process Shapes */
+.shape-process-main { width: 600px; height: 300px; background: #246d71; border-radius: 0 0 300px 300px; top: 0; right: -50px; }
+.shape-process-gold { width: 150px; height: 150px; background: var(--color-highlight); border-radius: 50%; bottom: 20%; right: 25%; }
+
+/* ============================================================
+   5. BUTTONS & CTAs
+============================================================ */
+.btn-primary, .btn-secondary {
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 700;
+    display: inline-block;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary { background: var(--color-highlight); color: var(--color-secondary); }
+.btn-secondary { border: 2px solid var(--color-text-light); color: var(--color-text-light); }
+
+.btn-primary:hover { filter: brightness(1.1); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.btn-secondary:hover { background: rgba(255,255,255,0.1); transform: translateY(-3px); }
+
+/* ============================================================
+   6. FORM SYSTEMS (Employer & Jobseeker)
+============================================================ */
 .form-section { background: var(--color-light-bg); padding: 80px var(--padding-sides); }
-.form-container { max-width: 750px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 8px; border-top: 5px solid var(--color-highlight); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-.form-container h2 { color: var(--color-primary); font-size: 2.2rem; margin-bottom: 5px; }
-.form-container p { margin-bottom: 30px; color: #666; }
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    border-top: 5px solid var(--color-highlight);
+    box-shadow: var(--shadow-soft);
+}
+
+.form-container h2 { font-size: 2.2rem; margin-bottom: 10px; }
+.form-container p { color: #666; margin-bottom: 30px; }
 
 .form-group { margin-bottom: 20px; display: flex; flex-direction: column; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 
-label { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 8px; color: var(--color-secondary); letter-spacing: 0.5px; }
+label { font-weight: 700; font-size: 0.8rem; text-transform: uppercase; color: var(--color-secondary); margin-bottom: 8px; letter-spacing: 0.5px; }
 
-input, select, textarea { padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; font-family: inherit; }
-input:focus, textarea:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(29,91,94,0.1); }
-textarea { min-height: 100px; resize: vertical; }
+input, select, textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border 0.3s;
+}
 
-.checkbox-group label { text-transform: none; font-weight: 400; display: flex; align-items: flex-start; gap: 10px; cursor: pointer; }
+input:focus, textarea:focus { outline: none; border-color: var(--color-primary); }
+textarea { min-height: 120px; resize: vertical; }
+
+.checkbox-group label {
+    text-transform: none;
+    font-weight: 400;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
 .checkbox-group input { width: auto; margin-top: 4px; }
 
-.form-submit-btn { background: var(--color-primary); color: #fff; width: 100%; padding: 18px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 1.1rem; transition: 0.3s; margin-top: 20px; }
+.form-submit-btn {
+    background: var(--color-primary);
+    color: #fff;
+    width: 100%;
+    margin-top: 20px;
+    padding: 18px;
+}
 .form-submit-btn:hover { background: var(--color-secondary); }
 
-/* ============================
-   FOOTER
-============================ */
-.footer { padding: 40px; background: var(--color-secondary); color: #fff; text-align: center; }
-.footer a { color: var(--color-highlight); text-decoration: none; }
+/* ============================================================
+   7. PROCESS STEP LISTS
+============================================================ */
+.process-container { max-width: 1100px; margin: 0 auto; }
+.process-subsection { margin-bottom: 60px; padding: 40px; background: #fff; border-radius: 12px; box-shadow: var(--shadow-soft); }
 
-/* ============================
-   RESPONSIVE
-============================ */
-@media (max-width: 768px) {
+.step-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+.step-list li {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    padding: 25px;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.step-list li strong {
+    color: var(--color-secondary);
+    border-right: 3px solid var(--color-highlight);
+    padding-right: 20px;
+}
+
+.step-list li .description { padding-left: 20px; color: #444; }
+
+/* ============================================================
+   8. FOOTER
+============================================================ */
+.footer {
+    padding: 50px var(--padding-sides);
+    background: var(--color-secondary);
+    color: #fff;
+    text-align: center;
+}
+
+.footer p { font-size: 0.9rem; opacity: 0.8; }
+.footer a { color: var(--color-highlight); text-decoration: none; margin: 0 10px; }
+
+/* ============================================================
+   9. RESPONSIVE MEDIA QUERIES
+============================================================ */
+@media (max-width: 992px) {
     .hero-container { flex-direction: column; text-align: center; }
-    .hero-shapes { width: 100%; height: 250px; order: -1; }
-    .hero h1 { font-size: 2.5rem; }
+    .hero-shapes { width: 100%; height: 300px; order: -1; }
+    .hero h1 { font-size: 2.8rem; }
+    .hero-content { padding: 40px 20px; }
+    .hero p { margin-left: auto; margin-right: auto; }
+    .hero-ctas { display: flex; flex-direction: column; gap: 15px; }
+    .btn-secondary { color: var(--color-primary); border-color: var(--color-primary); }
+}
+
+@media (max-width: 768px) {
     .form-row { grid-template-columns: 1fr; gap: 0; }
-    .form-container { padding: 25px; }
+    .step-list li { grid-template-columns: 1fr; }
+    .step-list li strong { border-right: none; border-bottom: 3px solid var(--color-highlight); padding-bottom: 10px; margin-bottom: 15px; display: block; }
+    .step-list li .description { padding-left: 0; }
 }
