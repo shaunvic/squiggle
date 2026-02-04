@@ -1,0 +1,82 @@
+/* ============================
+   VARIABLES
+============================ */
+:root {
+    --color-primary: #1d5b5e;      /* Brand Teal */
+    --color-secondary: #054a59;    /* Dark Navy */
+    --color-highlight: #d9ac5f;    /* Brand Gold */
+    --color-accent-cream: #e5d9c5; /* Muted Beige */
+    --color-light-bg: #f8fbfa;
+    --padding-sides: 6%;
+}
+
+/* ============================
+   BASE & HEADER
+============================ */
+body { font-family: 'Inter', Arial, sans-serif; margin: 0; color: #333; }
+.header { display: flex; justify-content: space-between; align-items: center; padding: 15px var(--padding-sides); background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
+.header-logo { height: 40px; }
+.nav a { margin-left: 20px; text-decoration: none; color: #333; font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
+.nav a.active, .nav a:hover { color: var(--color-primary); }
+
+/* ============================
+   HERO & GEOMETRICS
+============================ */
+.hero { background: var(--color-primary); min-height: 550px; display: flex; align-items: center; overflow: hidden; position: relative; }
+.hero-container { display: flex; width: 100%; align-items: center; }
+.hero-content { flex: 1; padding: 60px var(--padding-sides); color: #fff; z-index: 10; }
+.hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
+.hero p { font-size: 1.2rem; color: var(--color-accent-cream); max-width: 500px; margin-bottom: 30px; }
+
+/* Shapes */
+.hero-shapes { flex: 1; position: relative; height: 550px; background: rgba(255,255,255,0.02); }
+.shape { position: absolute; }
+.shape-employer-main { width: 500px; height: 500px; background: #246d71; border-radius: 50%; right: -50px; bottom: -50px; z-index: 1; }
+.shape-employer-gold { width: 250px; height: 250px; background: var(--color-highlight); border-radius: 0 120px 0 0; top: 10%; right: 15%; z-index: 2; }
+.shape-employer-accent { width: 60px; height: 100%; background: var(--color-secondary); right: 30%; z-index: 0; }
+
+/* ============================
+   BUTTONS
+============================ */
+.btn-primary { background: var(--color-highlight); color: var(--color-secondary); padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 4px; display: inline-block; transition: 0.3s; border: none; }
+.btn-primary:hover { filter: brightness(1.1); transform: translateY(-2px); }
+
+/* ============================
+   FORM SECTION
+============================ */
+.form-section { background: var(--color-light-bg); padding: 80px var(--padding-sides); }
+.form-container { max-width: 750px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 8px; border-top: 5px solid var(--color-highlight); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.form-container h2 { color: var(--color-primary); font-size: 2.2rem; margin-bottom: 5px; }
+.form-container p { margin-bottom: 30px; color: #666; }
+
+.form-group { margin-bottom: 20px; display: flex; flex-direction: column; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+label { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 8px; color: var(--color-secondary); letter-spacing: 0.5px; }
+
+input, select, textarea { padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; font-family: inherit; }
+input:focus, textarea:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(29,91,94,0.1); }
+textarea { min-height: 100px; resize: vertical; }
+
+.checkbox-group label { text-transform: none; font-weight: 400; display: flex; align-items: flex-start; gap: 10px; cursor: pointer; }
+.checkbox-group input { width: auto; margin-top: 4px; }
+
+.form-submit-btn { background: var(--color-primary); color: #fff; width: 100%; padding: 18px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 1.1rem; transition: 0.3s; margin-top: 20px; }
+.form-submit-btn:hover { background: var(--color-secondary); }
+
+/* ============================
+   FOOTER
+============================ */
+.footer { padding: 40px; background: var(--color-secondary); color: #fff; text-align: center; }
+.footer a { color: var(--color-highlight); text-decoration: none; }
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 768px) {
+    .hero-container { flex-direction: column; text-align: center; }
+    .hero-shapes { width: 100%; height: 250px; order: -1; }
+    .hero h1 { font-size: 2.5rem; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .form-container { padding: 25px; }
+}
