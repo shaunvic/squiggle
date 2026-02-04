@@ -1,47 +1,32 @@
 /* ============================================================
-   1. MASTER BRAND CONFIGURATION
+   1. MASTER CONFIG & BRAND PALETTE
 ============================================================ */
 :root {
     --color-primary: #1d5b5e;      /* Deep Teal */
-    --color-secondary: #054a59;    /* Dark Navy/Teal */
-    --color-highlight: #d9ac5f;    /* Muted Gold */
+    --color-secondary: #054a59;    /* Dark Navy */
+    --color-highlight: #d9ac5f;    /* Gold */
     --color-accent-cream: #e5d9c5; /* Beige */
-    --color-light-bg: #f8fbfa;     /* Soft Off-White */
-    --color-text-dark: #333333;
-    --color-text-light: #ffffff;
-    --padding-sides: 6%;
-    --shadow-soft: 0 10px 30px rgba(0,0,0,0.05);
+    --color-light-bg: #f8fbfa;
+    --padding-sides: 8%;
 }
 
-/* ============================================================
-   2. GLOBAL RESET & BASE STYLES
-============================================================ */
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html { scroll-behavior: smooth; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: 'Inter', -apple-system, sans-serif;
     line-height: 1.6;
-    color: var(--color-text-dark);
-    background-color: #fff;
+    color: #333;
     overflow-x: hidden;
 }
 
-h1, h2, h3 { line-height: 1.2; color: var(--color-secondary); }
-
 /* ============================================================
-   3. NAVIGATION & HEADER
+   2. HEADER & NAVIGATION
 ============================================================ */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem var(--padding-sides);
+    padding: 1.2rem var(--padding-sides);
     background: #fff;
     border-bottom: 1px solid #eee;
     position: sticky;
@@ -49,25 +34,25 @@ h1, h2, h3 { line-height: 1.2; color: var(--color-secondary); }
     z-index: 1000;
 }
 
-.header-logo { height: 42px; width: auto; }
+.header-logo { height: 45px; }
 
 .nav a {
-    margin-left: 20px;
+    margin-left: 25px;
     text-decoration: none;
-    color: var(--color-text-dark);
+    color: #333;
     font-weight: 500;
-    font-size: 0.9rem;
-    transition: color 0.3s;
+    font-size: 0.95rem;
+    transition: 0.3s;
 }
 
 .nav a.active, .nav a:hover { color: var(--color-primary); }
 
 /* ============================================================
-   4. HERO SYSTEM & GEOMETRIC ENGINE
+   3. HERO SECTION & SHAPES
 ============================================================ */
 .hero {
     background-color: var(--color-primary);
-    min-height: 550px;
+    min-height: 600px;
     display: flex;
     align-items: center;
     position: relative;
@@ -85,172 +70,123 @@ h1, h2, h3 { line-height: 1.2; color: var(--color-secondary); }
 .hero-content {
     flex: 1.2;
     padding: 60px var(--padding-sides);
-    color: var(--color-text-light);
+    color: #fff;
     z-index: 10;
 }
 
-.hero h1 { font-size: clamp(2.5rem, 5vw, 3.8rem); color: #fff; margin-bottom: 20px; }
-.hero p { font-size: 1.2rem; color: var(--color-accent-cream); margin-bottom: 35px; max-width: 550px; }
+.hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 20px; }
+.hero p { font-size: 1.25rem; color: var(--color-accent-cream); margin-bottom: 40px; max-width: 550px; }
 
-/* The Shape Wrapper */
+/* Shape Container */
 .hero-shapes {
     flex: 1;
     position: relative;
-    height: 550px;
+    height: 600px;
 }
 
-.shape { position: absolute; }
+.shape { position: absolute; pointer-events: none; }
 
-/* 4a. Index Shapes */
-.shape-large-circle { width: 600px; height: 600px; background: #246d71; border-radius: 50%; right: -100px; top: -50px; }
-.shape-semi-gold { width: 350px; height: 175px; background: var(--color-highlight); border-radius: 175px 175px 0 0; bottom: 10%; right: 15%; transform: rotate(-15deg); }
-.shape-quarter-cream { width: 280px; height: 280px; background: var(--color-accent-cream); border-radius: 100% 0 0 0; top: 0; right: 0; opacity: 0.8; }
+.shape-large-circle {
+    width: 600px; height: 600px; background: #246d71;
+    border-radius: 50%; right: -100px; top: -50px;
+}
 
-/* 4b. Employer Shapes */
-.shape-employer-main { width: 500px; height: 500px; background: #246d71; border-radius: 50%; right: -50px; bottom: -50px; }
-.shape-employer-gold { width: 250px; height: 250px; background: var(--color-highlight); border-radius: 0 120px 0 0; top: 10%; right: 15%; z-index: 2; }
-.shape-employer-accent { width: 60px; height: 100%; background: var(--color-secondary); right: 30%; }
+.shape-semi-gold {
+    width: 350px; height: 175px; background: var(--color-highlight);
+    border-radius: 175px 175px 0 0; bottom: 10%; right: 15%;
+    transform: rotate(-15deg);
+}
 
-/* 4c. Jobseeker Shapes */
-.shape-seeker-circle { width: 500px; height: 500px; background: #246d71; border-radius: 50%; right: -100px; top: -100px; }
-.shape-seeker-gold { width: 300px; height: 300px; background: var(--color-highlight); border-radius: 150px 0 150px 150px; bottom: 10%; right: 5%; opacity: 0.85; }
-.shape-seeker-path { width: 80px; height: 100%; background: var(--color-secondary); right: 25%; top: 0; }
-
-/* 4d. Process Shapes */
-.shape-process-main { width: 600px; height: 300px; background: #246d71; border-radius: 0 0 300px 300px; top: 0; right: -50px; }
-.shape-process-gold { width: 150px; height: 150px; background: var(--color-highlight); border-radius: 50%; bottom: 20%; right: 25%; }
+.shape-quarter-cream {
+    width: 250px; height: 250px; background: var(--color-accent-cream);
+    border-radius: 100% 0 0 0; top: 0; right: 0; opacity: 0.7;
+}
 
 /* ============================================================
-   5. BUTTONS & CTAs
+   4. BUTTONS
 ============================================================ */
 .btn-primary, .btn-secondary {
-    padding: 14px 28px;
+    padding: 16px 32px;
     text-decoration: none;
     border-radius: 4px;
     font-weight: 700;
     display: inline-block;
-    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    font-size: 0.85rem;
+    transition: 0.3s;
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border: none;
-    cursor: pointer;
 }
 
-.btn-primary { background: var(--color-highlight); color: var(--color-secondary); }
-.btn-secondary { border: 2px solid var(--color-text-light); color: var(--color-text-light); }
+.btn-primary { background: var(--color-highlight); color: var(--color-secondary); margin-right: 15px; border: none; }
+.btn-secondary { border: 2px solid #fff; color: #fff; }
 
-.btn-primary:hover { filter: brightness(1.1); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.btn-primary:hover { transform: translateY(-3px); filter: brightness(1.1); }
 .btn-secondary:hover { background: rgba(255,255,255,0.1); transform: translateY(-3px); }
 
 /* ============================================================
-   6. FORM SYSTEMS (Employer & Jobseeker)
+   5. INTERACTIVE VALUE CARDS
 ============================================================ */
-.form-section { background: var(--color-light-bg); padding: 80px var(--padding-sides); }
+.value-prop { padding: 100px var(--padding-sides); background: var(--color-light-bg); }
+.section-header { text-align: center; margin-bottom: 60px; }
+.section-header h2 { font-size: 2.5rem; color: var(--color-secondary); margin-bottom: 10px; }
 
-.form-container {
-    max-width: 800px;
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
     margin: 0 auto;
-    background: #fff;
+}
+
+.value-item { height: 280px; perspective: 1000px; }
+
+.value-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    cursor: pointer;
+}
+
+.value-front, .value-back {
+    position: absolute;
+    width: 100%; height: 100%;
     padding: 40px;
-    border-radius: 8px;
-    border-top: 5px solid var(--color-highlight);
-    box-shadow: var(--shadow-soft);
-}
-
-.form-container h2 { font-size: 2.2rem; margin-bottom: 10px; }
-.form-container p { color: #666; margin-bottom: 30px; }
-
-.form-group { margin-bottom: 20px; display: flex; flex-direction: column; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-
-label { font-weight: 700; font-size: 0.8rem; text-transform: uppercase; color: var(--color-secondary); margin-bottom: 8px; letter-spacing: 0.5px; }
-
-input, select, textarea {
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-family: inherit;
-    transition: border 0.3s;
-}
-
-input:focus, textarea:focus { outline: none; border-color: var(--color-primary); }
-textarea { min-height: 120px; resize: vertical; }
-
-.checkbox-group label {
-    text-transform: none;
-    font-weight: 400;
+    border-radius: 12px;
     display: flex;
-    align-items: flex-start;
-    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s ease-in-out;
+    border: 1px solid #eee;
+    background: #fff;
 }
 
-.checkbox-group input { width: auto; margin-top: 4px; }
-
-.form-submit-btn {
+.value-back {
     background: var(--color-primary);
     color: #fff;
-    width: 100%;
-    margin-top: 20px;
-    padding: 18px;
-}
-.form-submit-btn:hover { background: var(--color-secondary); }
-
-/* ============================================================
-   7. PROCESS STEP LISTS
-============================================================ */
-.process-container { max-width: 1100px; margin: 0 auto; }
-.process-subsection { margin-bottom: 60px; padding: 40px; background: #fff; border-radius: 12px; box-shadow: var(--shadow-soft); }
-
-.step-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
-.step-list li {
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    background: #fdfdfd;
-    border: 1px solid #eee;
-    padding: 25px;
-    border-radius: 8px;
-    align-items: center;
-}
-
-.step-list li strong {
-    color: var(--color-secondary);
-    border-right: 3px solid var(--color-highlight);
-    padding-right: 20px;
-}
-
-.step-list li .description { padding-left: 20px; color: #444; }
-
-/* ============================================================
-   8. FOOTER
-============================================================ */
-.footer {
-    padding: 50px var(--padding-sides);
-    background: var(--color-secondary);
-    color: #fff;
+    opacity: 0;
+    transform: translateY(20px);
     text-align: center;
 }
 
-.footer p { font-size: 0.9rem; opacity: 0.8; }
-.footer a { color: var(--color-highlight); text-decoration: none; margin: 0 10px; }
+/* Hover Effect Logic */
+.value-item:hover .value-front { opacity: 0; transform: translateY(-20px); }
+.value-item:hover .value-back { opacity: 1; transform: translateY(0); }
+
+.value-front i { font-size: 3.5rem; color: var(--color-highlight); margin-bottom: 20px; }
+.value-front h3 { color: var(--color-secondary); font-size: 1.6rem; }
 
 /* ============================================================
-   9. RESPONSIVE MEDIA QUERIES
+   6. FOOTER & RESPONSIVE
 ============================================================ */
+.footer { padding: 60px; background: var(--color-secondary); color: #fff; text-align: center; }
+.footer a { color: var(--color-highlight); text-decoration: none; }
+
 @media (max-width: 992px) {
     .hero-container { flex-direction: column; text-align: center; }
     .hero-shapes { width: 100%; height: 300px; order: -1; }
-    .hero h1 { font-size: 2.8rem; }
-    .hero-content { padding: 40px 20px; }
-    .hero p { margin-left: auto; margin-right: auto; }
     .hero-ctas { display: flex; flex-direction: column; gap: 15px; }
-    .btn-secondary { color: var(--color-primary); border-color: var(--color-primary); }
-}
-
-@media (max-width: 768px) {
-    .form-row { grid-template-columns: 1fr; gap: 0; }
-    .step-list li { grid-template-columns: 1fr; }
-    .step-list li strong { border-right: none; border-bottom: 3px solid var(--color-highlight); padding-bottom: 10px; margin-bottom: 15px; display: block; }
-    .step-list li .description { padding-left: 0; }
+    .btn-primary { margin-right: 0; }
+    .value-item { height: 250px; }
 }
