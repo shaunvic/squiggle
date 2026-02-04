@@ -1,180 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WEconomics Recruitment - For Employers</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+<section class="form-section">
+    <div class="form-box">
+        <h2>Employer Brief</h2>
+        <p>Complete the form below and a WEconomics specialist will contact you to confirm the details.</p>
 
-    <header class="header">
-        <div class="logo">
-            <img src="logo.png" alt="WEconomics Logo" class="header-logo" />
-        </div>
-        <nav class="nav">
-            <a href="index.html">Home</a>
-            <a href="#" class="active">For Employers</a>
-            <a href="jobseekers.html">For Job Seekers</a>
-            <a href="process.html">Our Process</a>
-            <a href="contact.html">Contact Us</a>
-        </nav>
-    </header>
+        <form>
+            <div class="form-group">
+                <label>COMPANY NAME *</label>
+                <input type="text" required>
+            </div>
 
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>Start Your<br>Risk-Free Search</h1>
-                <p>
-                    Share the details of the role you’re looking to fill and we’ll source,
-                    screen, and shortlist candidates who match your requirements.
-                </p>
-                <div class="hero-ctas">
-                    <a href="#form-area" class="btn-primary">
-                        <i class="fas fa-arrow-down"></i> Start Your Search
-                    </a>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>FIRST NAME *</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>SURNAME *</label>
+                    <input type="text" required>
                 </div>
             </div>
 
-            <div class="hero-shapes">
-                <div class="shape shape-employer-main"></div>
-                <div class="shape shape-employer-gold"></div>
-                <div class="shape shape-employer-accent"></div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>EMAIL ADDRESS *</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>PHONE NUMBER *</label>
+                    <input type="tel" required>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <section class="form-section" id="form-area">
-        <div class="form-container">
-            <h2>Employer Brief</h2>
-            <p>Complete the form below and a WEconomics specialist will contact you to confirm the details.</p>
+            <div class="form-group">
+                <label>ROLE / POSITION TITLE *</label>
+                <input type="text" required>
+            </div>
 
-            <form action="https://formspree.io/f/mzdzplgo" method="POST">
+            <div class="form-row">
                 <div class="form-group">
-                    <label for="company-name">Company Name *</label>
-                    <input type="text" id="company-name" name="company_name" required />
+                    <label>EMPLOYMENT TYPE *</label>
+                    <select><option>Please select</option></select>
                 </div>
+                <div class="form-group">
+                    <label>LOCATION *</label>
+                    <input type="text" placeholder="City / Region">
+                </div>
+            </div>
 
-           <div class="form-row">
-    <div class="form-group">
-        <label for="fname">First Name *</label>
-        <input type="text" id="fname" name="first_name" required>
+            <button type="submit" class="form-submit-btn">Submit Brief</button>
+        </form>
     </div>
-    <div class="form-group">
-        <label for="sname">Surname *</label>
-        <input type="text" id="sname" name="surname" required>
-    </div>
-</div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" required />
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="role-title">Role / Position Title *</label>
-                    <input type="text" id="role-title" name="role_title" required />
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="employment-type">Employment Type *</label>
-                        <select id="employment-type" name="employment_type" required>
-                            <option value="" selected disabled>Please select</option>
-                            <option value="Permanent">Permanent</option>
-                            <option value="Fixed-term Contract">Fixed-term Contract</option>
-                            <option value="Temporary / Casual">Temporary / Casual</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="location">Location *</label>
-                        <input type="text" id="location" name="location_city_region" required placeholder="City / Region" />
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="salary-range">Salary Range (Monthly – ZAR) *</label>
-                    <input type="text" id="salary-range" name="salary_range_monthly_zar" required placeholder="e.g. R25,000 – R35,000" />
-                </div>
-
-                <div class="form-group">
-                    <label for="benefits">Benefits / Incentives</label>
-                    <textarea id="benefits" name="benefits_incentives" placeholder="e.g. medical aid, bonus, commission"></textarea>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="min-qualification">Min. Qualification *</label>
-                        <select id="min-qualification" name="minimum_qualification_required" required>
-                            <option value="" selected disabled>Select</option>
-                            <option value="Grade 12 / Matric">Grade 12 / Matric</option>
-                            <option value="Certificate / Diploma">Certificate / Diploma</option>
-                            <option value="Degree">Degree</option>
-                            <option value="Postgraduate">Postgraduate</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="experience-years">Experience *</label>
-                        <select id="experience-years" name="years_of_experience_required" required>
-                            <option value="" selected disabled>Select</option>
-                            <option value="Entry level (0–1)">Entry level (0–1)</option>
-                            <option value="2–4 years">2–4 years</option>
-                            <option value="5–7 years">5–7 years</option>
-                            <option value="8+ years">8+ years</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="key-skills">Key Skills / Experience *</label>
-                    <textarea id="key-skills" name="key_skills_experience" required placeholder="• Skill one • Skill two"></textarea>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="bee-appointment">BEE Appointment *</label>
-                        <select id="bee-appointment" name="bee_appointment" required>
-                            <option value="" selected disabled>Select</option>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="urgency">Urgency to Fill *</label>
-                        <select id="urgency" name="urgency_to_fill" required>
-                            <option value="" selected disabled>Select</option>
-                            <option value="Immediate">Immediate</option>
-                            <option value="Within 30 days">Within 30 days</option>
-                            <option value="Flexible">Flexible</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group checkbox-group">
-                    <label>
-                        <input type="checkbox" name="consent" required />
-                        I consent to WEconomics collecting and processing this information for recruitment purposes.
-                    </label>
-                </div>
-
-                <input type="hidden" name="_subject" value="New Employer Brief – WEconomics" />
-                <input type="hidden" name="_redirect" value="https://weconomics.co.za/thank-you-employers.html" />
-
-                <button type="submit" class="btn-secondary form-submit-btn">Submit Employer Brief</button>
-            </form>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <p>&copy; 2026 WEconomics Recruitment | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms</a></p>
-    </footer>
-
-</body>
-</html>
+</section>
